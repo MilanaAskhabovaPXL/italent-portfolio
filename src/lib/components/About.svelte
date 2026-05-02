@@ -80,7 +80,7 @@
 				{#each SEMINARIES as seminary}
 					<div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center hover:border-[#5ba4d4] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
 						<h4 class="text-sm font-bold text-gray-900 mb-1">{seminary.title}</h4>
-						<p class="text-xs font-semibold text-[#5ba4d4] mb-1">{seminary.date} · {seminary.duration}</p>
+						<p class="text-xs font-semibold text-[#5ba4d4] mb-1">{seminary.date} - {seminary.duration}</p>
 						{#if seminary.location}<p class="text-xs text-gray-400 mb-2">{seminary.location}</p>{/if}
 						<p class="text-xs text-gray-500 leading-relaxed">{seminary.description}</p>
 					</div>

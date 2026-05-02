@@ -35,7 +35,7 @@
 				{#each PERSONAL_DEVELOPMENT as item}
 					<div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-[#5ba4d4]/40 hover:shadow-md transition-all duration-300">
 						<h4 class="text-base font-bold text-gray-900 mb-1 leading-snug">{item.title}</h4>
-						<p class="text-xs font-semibold text-[#5ba4d4] mb-3">{item.date} · {item.duration} · {item.location}</p>
+						<p class="text-xs font-semibold text-[#5ba4d4] mb-3">{item.date} - {item.duration} - {item.location}</p>
 						<p class="text-sm text-gray-600 leading-relaxed">{item.description}</p>
 					</div>
 				{/each}

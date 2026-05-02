@@ -31,7 +31,7 @@
 		<h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">{activity.title}</h1>
 		<p class="text-white/75 mt-2 font-medium">{activity.dates}</p>
 		{#if activity.location}
-			<p class="text-white/60 mt-1 text-sm">{activity.location}{activity.duration ? ` · ${activity.duration}` : ''}</p>
+			<p class="text-white/60 mt-1 text-sm">{activity.location}{activity.duration ? ` - ${activity.duration}` : ''}</p>
 		{/if}
 	</div>
 </div>

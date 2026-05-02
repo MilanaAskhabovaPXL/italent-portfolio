@@ -24,13 +24,7 @@
 	<div class="p-6 flex flex-col gap-4 flex-1">
 		<p class="text-sm text-gray-600 leading-relaxed">{activity.description}</p>
 
-		<div class="rounded-xl p-4 border-l-4 border-[#5ba4d4]"
-		     style="background: linear-gradient(135deg, rgba(91,164,212,0.08) 0%, rgba(45,135,195,0.08) 100%)">
-			<span class="block text-xs font-bold text-[#5ba4d4] uppercase tracking-wide mb-1">Hoogtepunt</span>
-			<p class="text-sm text-gray-800 leading-snug m-0">{activity.highlight}</p>
-		</div>
-
-		<div class="flex flex-wrap gap-2">
+<div class="flex flex-wrap gap-2">
 			{#each activity.tags as tag (tag)}
 				<span class="bg-gray-100 text-gray-700 border border-gray-200 rounded-full px-3 py-1 text-xs font-semibold
 				             hover:bg-[#5ba4d4]/10 hover:border-[#5ba4d4] hover:text-[#5ba4d4] transition-all duration-150 cursor-default">

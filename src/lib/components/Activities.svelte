@@ -18,8 +18,8 @@
 			<span class="w-1 h-6 rounded-full gradient-primary inline-block"></span>
 			Geselecteerde activiteiten
 		</h3>
-		<p class="text-sm text-gray-500 mb-8 ml-4">Drie activiteiten uitgewerkt met volledig verslag en reflectie</p>
-		<div class="grid md:grid-cols-3 gap-8 mb-16">
+		<p class="text-sm text-gray-500 mb-8 ml-4">Vier activiteiten uitgewerkt met volledig verslag en reflectie</p>
+		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
 			{#each ACTIVITIES as activity (activity.id)}
 				<ActivityCard {activity} />
 			{/each}

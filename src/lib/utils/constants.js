@@ -4,6 +4,7 @@ export const MILANA_PROFILE = {
 	university: 'Hogeschool PXL',
 	introduction: [
 		'Ik ben Milana, laatstejaarsstudent aan Hogeschool PXL, waar ik Toegepaste Informatica studeer met de afstudeerrichting Applicatieontwikkeling. Ik koos deze richting omdat ik graag dingen ontwikkel en het leuk vind om problemen op te lossen door te programmeren. Mijn doel is om toepassingen te maken die het leven van mensen vergemakkelijken of helpen om praktische problemen op te lossen. Naast mijn interesse in IT ben ik graag creatief bezig met pottenbakken, patisserie en het maken van kleren en ik zou me daar graag verder in verdiepen.',
+		'Een van mijn sterke punten is mijn doorzettingsvermogen: ik wil taken graag afronden en niet halverwege opgeven. Door mijn ervaring met groepsprojecten ben ik een betere teamspeler geworden en dankzij mijn studentenjobs heb ik geleerd om klantgericht te werken en goed samen te werken met anderen.',
 		'Tijdens mijn studies heb ik deelgenomen aan verschillende activiteiten: seminaries, innovatieroute, hackathons en een internationaal programma. Dit heeft me geholpen om mijn interesses beter te begrijpen en mijn vaardigheden uit te breiden.',
 		'Na afstuderen hoop ik toepassingen te ontwikkelen die efficiënter werken mogelijk maken of complexe processen vereenvoudigen. Ik wil mijn programmeer- en teamvaardigheden verder versterken en op termijn graag een leidinggevende rol opnemen.'
 	],
@@ -67,7 +68,7 @@ export const ACTIVITIES = [
 		duration: '30 uur',
 		doelstelling: 'In een multidisciplinair en internationaal team een AI-gedreven app-concept ontwikkelen dat een echt probleem oplost.',
 		eigenDoelstelling: 'Ervaring opdoen in teamwerk en leren samenwerken met collega\'s uit andere landen en andere richtingen dan IT.',
-		teamSamenstelling: 'Zes personen: drie marketing-studenten, twee management-studenten en ik als enige IT-student.',
+		teamSamenstelling: 'drie marketing-studenten, twee management-studenten en ik als enige IT-student.',
 		description: 'In een multidisciplinair en internationaal team (België, Duitsland, Kroatië) ontwikkelden we een AI-gestuurde app-concept dat jongeren en ouderen met elkaar verbindt voor wederzijds leren en hulp.',
 		tags: ['Internationaal', 'AI', 'Teamwork', 'Innovation'],
 		details: [
@@ -137,6 +138,47 @@ export const ACTIVITIES = [
 			{ src: 'hackathon/hack-the-future/pxl-studenten-hackathon.jpg', alt: 'Hack the Future deelnemers', beforeParagraph: 0 },
 			{ src: 'hackathon/hack-the-future/zoo.jpg', alt: 'Bezoek aan de zoo Antwerpen tijdens de pauze', beforeParagraph: 4 }
 		]
+	},
+	{
+		id: 'csc',
+		title: 'Cyber Security Challenge Belgium (CSC)',
+		date: 'maart 2025',
+		dates: '14-15 maart 2025',
+		location: 'Online',
+		duration: '32 uur',
+		doelstelling: 'Deelnemen aan een Capture The Flag (CTF) competitie waarbij je diverse cybersecurity challenges oplost. Het doel is om verborgen flags te vinden en je skills in ethical hacking en problem-solving aan te scherpen.',
+		eigenDoelstelling: 'Meer ervaring opdoen met cybersecurity, leren hoe je beveiligingsproblemen aanpakt en mijn problem-solving skills versterken.',
+		teamSamenstelling: 'Ik werkte samen met mijn team "Onions" bestaande uit 3 studenten.',
+		description: 'Deelname in team "Onions" aan een Capture The Flag (CTF) competitie. Flags gevonden in audiobestanden, PNG-metadata en via zelfgeschreven Python scripts.',
+		tags: ['CTF', 'Cybersecurity', 'Python'],
+		details: [
+			'Capture The Flag challenges',
+			'Python scripting voor flags',
+			'Steganografie en audio-analyse',
+			'Metadata analyse (PNG/audio)',
+			'Cryptografie en reverse engineering'
+		],
+		highlight: 'Het moment dat ik zelf een flag vond met mijn Python script gaf me veel vertrouwen dat je dingen kan leren en toepassen zelfs zonder veel voorkennis.',
+		verslag: [
+			'De Cyber Security Challenge Belgium was een twee-daagse Capture The Flag competitie waarbij teams diverse cybersecurity challenges moesten oplossen. Dit was heel anders dan de andere hackathons die ik deed. In plaats van iets te bouwen, moest je gaten in beveiliging vinden en flags uit verschillende systemen halen. De Cyber Security Challenge is een jaarlijkse competitie in België waar meer dan 1000 studenten aan deelnemen.',
+			'Elke challenge had een bepaalde puntwaarde. De challenges met 500 punten werden door niemand opgelost. De punten daalden naarmate meer deelnemers dezelfde challenge oplossen. Dit systeem maakte het spannend en competitief. Teams konden kiezen welke challenges ze willen aanpakken en in welke volgorde. Dit gaf ons flexibiliteit want als we ergens vastzaten, konden we naar een ander challenge type gaan.',
+			'Ons team Onions bestond uit drie personen met verschillende skills. Ik kende mijn teamgenoten niet goed aan het begin. We waren allemaal van verschillende richtingen en hadden verschillende ervaringsniveaus met cybersecurity. Maar door deze twee intensieve dagen samen te werken, leerden we elkaar veel beter kennen.',
+			'De challenges varieerden in type en moeilijkheid. De Cyber Security Challenge bevat verschillende categoriën: cryptografie, reverse engineering, web security, forensics en programmeren. Sommige challenges waren straightforward: je moest een flag vinden die in een image verborgen was met steganografie. Andere waren veel complexer en vereisten diepe technische kennis. Je moest scripts schrijven, bestanden analyseren, metadata checken op foto\'s en binaire data decoderen.',
+			'Ik werkte veel met Python scripts om flags op te sporen. Met een van de Python scripts heb ik zelf een vlag kunnen vinden. We moesten audiobestanden doorzoeken, PNG metadata checken en binaire data decoderen. Een van de flags die ik zelf vond was verstopt in een audiobestand. Ik gebruikte de Audiopsy tool om het bestand te analyseren en de flag te extraheren. Dit moment gaf me veel vertrouwen dat ik ook zonder veel kennis iets kon bereiken. Ik realiseerde me dat je niet alles op voorhand hoeft te weten want je kan veel leren door te experimenteren.',
+			'De atmosfeer was intens en uitdagend. Je zit urenlang achter je laptop met je team, zoekt naar hints en probeert verschillende aanpakken. Je bent constant op zoek naar nieuwe ideeën en manieren om challenges op te lossen. Als je een flag vindt, spring je op van enthousiasme. Als je vast zit, vraag je je teamgenoten om hulp. Het teamwerk verliep vlot. In het begin kenden we elkaar niet goed, maar naarmate we langer samenwerkten, begrepen we hoe we het beste samen konden werken.',
+			'Wanneer iemand vastzat, deelde hij zijn scherm om zijn probleem te tonen. Zo brainstormden we samen over mogelijke oplossingen. Deze samenwerking maakte ons sterker als team. We leerden van elkaars sterktes en steunden elkaar in zwaktes. De community van Cyber Security Challenge is heel groot en in hun Discord server konden we vragen stellen en soms krijgen we goede inzichten van andere deelnemers en mentoren. Dit hielp ons ook vooruit te komen met challenges. Het was een echte leerervaring waarbij we niet alleen cybersecurity leerden, maar ook hoe je effectief in een team kunt werken en hoe je gebruik maakt van de bredere community.'
+		],
+		reflectie: [
+			'Deze hackathon was echt anders dan Hack the Future. Hier ging het niet om code schrijven maar om problemen oplossen met tools en scripts die je niet kent. Dit leerde me veel over mijn aanpak en hoe ik onder druk kan denken.',
+			'Mijn sterke punt was dat ik niet snel opgaf. Als een challenge niet werkte, probeerde ik een ander approach. Ik leerde snel van mijn teamgenoten. Ze hielpen me begrijpen hoe je bepaalde tools gebruikt en hoe je naar beveiligingsproblemen denkt. Dit samenwerken maakte het veel efficiënter en leuker.',
+			'Mijn zwakke punt was dat ik niet veel cybersecurity kennis had. Ik moest veel googlen en veel dingen werden me uitgelegd. Ik voelde me soms verloren tussen al die tools en technieken. Maar dit is ook waarom ik deze hackathon deed, om precies dit te leren. Dit gaf me inzicht dat je niet alles op school leert. Je moet actief zoeken naar kennis en je moet durven deelnemen aan activiteiten waar je niet alles van weet.',
+			'Wat me het meest is bijgebleven is het moment dat ik zelf een flag vond met mijn Python script. Ik had het script geschreven en het werkte. Dit toont dat je dingen kan leren en kan toepassen zelfs als je niet veel voorkennis hebt.',
+			'Het teamwork in CSC was anders dan in andere hackathons. We zaten samen online, deelden onze schermen en brainstormden samen. Als iemand vastzat, deelde hij het probleem en we hielpen elkaar. Dit is wat samenwerking betekent: elkaar helpen en samen verder gaan.',
+			'Dit hackathon toont ook mijn engagement. Ik deed dit niet omdat het verplicht was. Ik schreef me in omdat ik benieuwd was en omdat ik wilde leren. Voor de toekomst wil ik meer over cybersecurity leren. Dit hackathon gaf me een eerste smaak en ik wil meer.'
+		],
+		images: [
+			{ src: 'hackathon/csc2025/pixel-csc.png', alt: 'CSC 2025 deelname', beforeParagraph: 0 }
+		]
 	}
 ];
 
@@ -179,6 +221,18 @@ export const EXTRA_ACTIVITIES = [
 		location: 'Online',
 		tags: ['CTF', 'Cybersecurity', 'Python'],
 		description: 'Deelname in team "Onions" aan een Capture The Flag (CTF) competitie. Flags gevonden in audiobestanden, PNG-metadata en via zelfgeschreven Python scripts.',
+		reflectie: [
+			'Deze hackathon was echt anders dan Hack the Future. Hier ging het niet om code schrijven maar om problemen oplossen met tools en scripts die je niet kent. Dit leerde me veel over mijn aanpak en hoe ik onder druk kan denken.',
+			'Mijn sterke punt was dat ik niet snel opgaf. Als een challenge niet werkte, probeerde ik een ander approach. Ik leerde snel van mijn teamgenoten. Ze hielpen me begrijpen hoe je bepaalde tools gebruikt en hoe je naar beveiligingsproblemen denkt. Dit leerde me dat je in IT veel kan leren van andere mensen als je bereid bent vragen te stellen. In het begin snapte ik niet hoe Python scripts werkten, maar door te experimenteren en vragen te stellen aan mijn team, snapte ik het uiteindelijk wel.',
+			'Mijn zwakke punt was dat ik niet veel cybersecurity kennis had. Ik moest veel googlen en veel dingen werden me uitgelegd. Ik voelde me soms verloren tussen al die tools en technieken. Maar dit is ook waarom ik deze hackathon deed, om precies dit te leren. Dit gaf me inzicht dat je niet alles op school leert. Je moet actief zoeken naar kennis en je moet durven deelnemen aan activiteiten waar je niet alles van weet.',
+			'De CSC was mijn eerste echte Capture The Flag competitie en het gaf me inzicht dat er veel verschillende soorten programmeerwerk bestaan. Niet alles is applicatieontwikkeling. Er is security, data analysis, forensics, en veel meer. Dit kan een richting zijn die me interesseert voor later. Ik realiseerde me dat cybersecurity echt boeiend is. Het gaat over het vinden van zwakke plekken, over creatief denken, over het begrijpen van systemen op een dieper niveau.',
+			'Wat me het meest is bijgebleven is het moment dat ik zelf een flag vond met mijn Python script. Ik had het script geschreven, het werkte, en ik vond iets wat anderen niet hadden gevonden. Dat gaf me echt vertrouwen. Dit toont dat je dingen kan leren en kan toepassen zelfs als je niet veel voorkennnis hebt.',
+			'Het teamwork in CSC was anders dan in andere hackathons. We zaten samen online, delen onze schermen, brainstormden samen. Dit leerde me dat goed communiceren essentieel is in een team. Als iemand vastzat, hij deelde het probleem en we hielpen elkaar. Dit is wat samenwerking betekent: elkaar helpen en samen verder gaan.',
+			'Dit hackathon toont ook mijn engagement en ondernemerschap. Ik deed dit niet omdat het verplicht was. Ik schreef me in omdat ik benieuwd was en omdat ik wilde leren. Dit is mijn X-Factor: ik zoek actief naar kansen, ik probeer dingen die ik niet ken, en ik geef niet op als het moeilijk wordt.',
+			'Ik heb deze activiteit geselecteerd omdat het me toont dat ik uit mijn comfortzone kan gaan. Ik kende cybersecurity niet echt maar ik deed het toch. Dit leerde me ook dat failuren niet erg zijn. We wonnen niet, maar we leerden. Dit is wat telt.',
+			'Voor de toekomst wil ik meer over cybersecurity leren. Misschien volg ik later een cursus of een specialisatie. Dit hackathon gaf me een eerste smaak en ik wil meer. Dit toont ook dat I-Talent me helpt om mijn interesses beter te ontdekken en uit te bouwen.',
+			'Tot slot: deze hackathon herinnert me eraan dat je als developer nooit kan stoppen met leren. De IT-wereld verandert snel en je moet openstaan voor nieuwe dingen. CSC leerde me dit op een praktische manier.'
+		],
 		images: [
 			{ src: 'hackathon/csc2025/pixel-csc.png', alt: 'CSC 2025 deelname' },
 			{ src: 'hackathon/csc2025/scoreboard.png', alt: 'CSC scoreboard' }
@@ -200,57 +254,65 @@ export const EXTRA_ACTIVITIES = [
 export const SEMINARIES = [
 	{
 		title: '.NET Aspire',
-		description: 'Microsoft framework voor het bouwen en beheren van cloud-native applicaties met microservices-architectuur',
+		description: 'Daniel Mertens van Info Support gaf een uiteenzetting over .NET Aspire, een Microsoft framework dat ontwikkelaars helpt bij het bouwen en beheren van cloud-native applicaties met een microservices-architectuur.',
 		company: 'Info Support',
+		location: 'Corda Campus, Hasselt',
 		date: '25 februari 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'Politie: Digitaal onderzoek',
-		description: 'Digital forensics, cybercrime, crypto-assets en data-analyse met de Regionale Computer Crime Unit',
+		description: 'Alexander Bijnens en Arne Vanmechelen gaven een diepgaande blik op het werk van de Regionale Computer Crime Unit (RCCU). De focus lag op digital forensics en cybercrime. Aan de hand van een casus werd getoond hoe DLT-analyse en carving op de boordcomputer van een auto bewijslast leverden.',
 		company: 'Politie',
+		location: 'Corda Campus, Hasselt',
 		date: '1 april 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'ACA Group: React',
-		description: 'Introductie in React met JSX, state management, useEffect hook, functionele componenten en routing',
+		description: 'Introductie in React met kerntconcepten: JSX, state management, de useEffect hook, functionele componenten en one-way databinding. De theorie werd concreet gemaakt door de bouw van een Pokémon-app met herbruikbare componenten en routing via useContext.',
 		company: 'ACA Group',
+		location: 'Corda Campus, Hasselt',
 		date: '29 april 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'Vanroey: AI in de praktijk',
-		description: 'Praktijkgerichte introductie in kunstmatige intelligentie en prompt engineering',
+		description: 'Praktijkgerichte introductie in artificiële intelligentie met uitgebreide aandacht voor basisprincipes van prompt engineering om AI effectief in te zetten in een professionele omgeving.',
 		company: 'Vanroey',
+		location: 'Corda Campus, Hasselt',
 		date: '13 mei 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'BDD & ATDD',
-		description: 'Gedragsgedreven softwareontwikkeling met TDD, BDD en ATDD methodieken',
+		description: 'De noodzaak van kwalitatief testen geïllustreerd aan de hand van bekende softwarefouten uit het verleden. Methodieken als TDD (Test Driven Development), BDD (Behavior Driven Development) en ATDD (Acceptance Test Driven Development) werden toegelicht.',
 		company: 'Brightest',
+		location: 'Corda Campus, Hasselt',
 		date: '5 november 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'Refleqt: Software testing',
-		description: 'Praktisch seminar over Postman en AI-functies voor het genereren van testcases',
+		description: 'Zeer praktisch ingestoken seminar met focus op Postman. Er werd getoond hoe de AI-functionaliteiten van Postman helpen bij het genereren van testcases en code-export.',
 		company: 'Refleqt',
+		location: 'Corda Campus, Hasselt',
 		date: '26 november 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'Inetum: Enterprise UX',
-		description: 'Uitgebreid overzicht van Enterprise UX, design patterns en volledige UX-methodologie',
+		description: 'Uitgebreid overzicht van Enterprise UX met focus op het gebruik van design patterns voor zakelijke applicaties en de volledige UX-methodologie.',
 		company: 'Inetum',
+		location: 'Corda Campus, Hasselt',
 		date: '10 december 2025',
 		duration: '3 uur'
 	},
 	{
 		title: 'Cegeka: Open Source',
-		description: 'Open-source software in het moderne IT-landschap, voordelen en risico\'s',
+		description: 'Bespreking van open-source software in het moderne IT-landschap. Naast de voordelen werden ook de risico\'s in kaart gebracht, zoals beveiligingskwetsbaarheden en het gebrek aan onderhoud.',
 		company: 'Cegeka',
+		location: 'Corda Campus, Hasselt',
 		date: '17 december 2025',
 		duration: '3 uur'
 	}
@@ -258,23 +320,16 @@ export const SEMINARIES = [
 
 export const REFLECTION_CONTENT = {
 	title: 'Eindreflectie',
-	sections: [
-		{
-			heading: 'Mijn I-Talent ervaring',
-			content: 'I-Talent was een unieke ervaring die me veel over mezelf heeft geleerd. Aan het begin twijfelde ik of dit echt mijn ding is, maar elke activiteit was boeiend en leerzaam. Nu ben ik zeker dat ik dit wil doen. In het begin had ik als doel om meer ervaring op te doen en beter te leren samenwerken. Door DDD, het internationale BIP, hackathons en seminaries heb ik mezelf opengesteld om nieuwe dingen te proberen. Dit heeft me een beter beeld gegeven van wie ik ben en wat ik kan.'
-		},
-		{
-			heading: 'Wat ik heb bijgeleerd',
-			content: 'Het belangrijkste dat ik heb bijgeleerd, is dat je in IT altijd moet blijven openstaan voor nieuwe dingen. De seminaries hebben me nieuwe technieken geleerd die ik niet kende. De hackathons hebben me geleerd hoe je onder druk iets aflevert. Het BIP heeft me getoond dat samenwerken met mensen van verschillende richtingen en afkomsten veel kan opleveren. Dit zijn dingen die ik in mijn toekomst zeker nog ga gebruiken.'
-		},
-		{
-			heading: 'Wie ik ben geworden',
-			content: 'Ik ben bewuster geworden van wie ik ben. Mijn sterke punten zijn teamwork en doorzettingsvermogen. Ik geef niet op wanneer dingen moeilijk worden. Ik ben iemand die engagement toont voor wat ik doe. Ik doe niet alleen de verplichte dingen, maar zoek ook naar extra kansen. Ik schrijf me in voor hackathons, ik ga naar internationale programma, ik probeer nieuwe dingen.'
-		},
-		{
-			heading: 'Goals',
-			content: 'In de toekomst hoop ik mijn skills verder te ontwikkelen binnen een bedrijf. Ik wil zien hoe alles echt werkt in de praktijk. Ik hoop ook dat ik kan bijdragen en anderen kan helpen met wat ik heb geleerd.'
-		}
+	paragraphs: [
+		'I-Talent was echt een unieke ervaring. Aan het begin twijfelde ik of dit echt mijn ding was, maar elke activiteit was boeiend en leerzaam. Nu ben ik zeker dat deze activiteiten me hebben geholpen mijn hard en soft skills verder te ontwikkelen.',
+		'In het begin wilde ik vooral meer ervaring opdoen en beter leren samenwerken. Door de Domain Driven Design route, het BIP, hackathons en al die seminaries heb ik mezelf gedwongen om nieuwe dingen uit te proberen. Ik weet nu dat ik kan samenwerken met verschillende soorten mensen. Ik weet dat ik dingen kan afmaken zelfs onder druk.',
+		'Tijdens het BIP was ik de enige IT-persoon in mijn groep met marketing en management mensen uit Duitsland en Kroatië. We werden vrienden en dat maakte het makkelijker om samen te werken. Ik moest mijn mockups uitleggen aan marketing mensen en dat ging beter dan ik dacht. Ze snapten wat ik wilde bereiken en ik leerde wat zij nodig hadden van mij. De verschillende perspectieven maakten ons concept beter.',
+		'Het belangrijkste wat ik heb geleerd is dat je in IT altijd open moet blijven voor nieuwe dingen. De seminaries gaven me veel nieuwe kennis maar de hackathons leerden me iets anders. Hackathons zijn niet zomaar competities. Ze zijn over snel leren, samenwerken onder druk en iets afmaken wat werkt.',
+		'Ik deed aan drie hackathons en elke was anders. De eerste was de CSC hackathon, een Capture The Flag competitie. Dit was heel anders. Je moet denken als hacker, problemen oplossen met scripts en tools die je niet kent. Dit leerde me creatief denken en samenwerken met andere mensen.',
+		'De tweede was CodeBash, een algoritmische programmeerwedstrijd. Hier moest je snel complexe problemen oplossen. Met mijn team leerden we snel van elkaar en we konden elkaar helpen als iemand vast zat. De derde was Hack the Future in Antwerpen. We moesten in korte tijd een Flutter app maken met Gemini AI. In de laatste minuten moesten we nog bugs fixen voordat we konden presenteren. Dat moment gaf me echt vertrouwen. We hebben het afgekregen terwijl ik dacht dat het niet zou lukken.',
+		'Deze extra hackathons deed ik omdat ik echt geïnteresseerd ben, niet omdat het verplicht was. Dit toont mijn engagement en passie. Tijdens al deze activiteiten heb ik nieuwe frameworks en tools geleerd.',
+		'Mijn sterke punten zijn teamwork en doorzettingsvermogen. Ik geef niet snel op. In de hackathons merkte ik dit goed. Bij Hack the Future kende ik Flutter nog niet zo goed en moest ik veel zoeken. In plaats van opgeven ben ik aan de slag gegaan, heb ik documentatie gelezen en vragen gesteld aan experts. Uiteindelijk hebben we het afgekregen. Ik kan goed met verschillende soorten mensen samenwerken en dat heb ik echt geoefend in het BIP met marketing en management studenten en in de hackathons met developers.',
+		'In de toekomst wil ik in een bedrijf werken waar ik kan leren hoe alles echt werkt. Ik wil bijdragen met wat ik geleerd heb. Op den duur zou ik graag een team leiden.'
 	]
 };
 

@@ -1,6 +1,8 @@
 <script>
 	import { smoothScroll } from '$lib/services/scrollService.js';
-	import { NAV_LINKS } from '$lib/utils/constants.js';
+	import { NAV_LINKS, SOCIAL_LINKS } from '$lib/utils/constants.js';
+	import linkedinImg from '../../images/contacts/linkedin.png';
+	import githubImg from '../../images/contacts/github.png';
 
 	const currentYear = new Date().getFullYear();
 
@@ -10,108 +12,58 @@
 	}
 </script>
 
-<footer class="footer">
-	<div class="footer-gradient"></div>
-	<div class="container footer-inner">
-		<div class="footer-brand">
-			<span class="footer-icon">🎓</span>
+<footer id="contact" class="relative bg-[#1a1a2e] text-white/80 pt-16 pb-8 overflow-hidden">
+	<!-- Top accent line -->
+	<div class="absolute top-0 left-0 right-0 h-1 gradient-primary"></div>
+
+	<div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-8 text-center">
+
+		<!-- Brand -->
+		<div class="flex items-center gap-3">
 			<div>
-				<p class="footer-name">Milana Askhabova</p>
-				<p class="footer-tagline">iLearning Portfolio · PXL University</p>
+				<p class="font-bold text-lg text-white m-0">Milana Askhabova</p>
+				<p class="text-sm opacity-60 m-0 mt-0.5">I-Talent Portfolio - Hogeschool PXL</p>
 			</div>
 		</div>
 
-		<nav class="footer-nav" aria-label="Footer navigation">
-			<ul role="list">
+		<!-- Navigation -->
+		<nav aria-label="Footer-navigatie">
+			<ul class="flex gap-8 flex-wrap justify-center list-none m-0 p-0">
 				{#each NAV_LINKS as link (link.id)}
 					<li>
-						<a href={link.href} on:click={(e) => handleLink(e, link.href)}>{link.label}</a>
+						<a href={link.href}
+						   class="text-sm font-medium text-white/60 hover:text-[#5ba4d4] transition-colors"
+						   on:click={(e) => handleLink(e, link.href)}>
+							{link.label}
+						</a>
 					</li>
 				{/each}
 			</ul>
 		</nav>
 
-		<div class="footer-copy">
-			<p>© {currentYear} Milana Askhabova. Built with Svelte &amp; ❤️</p>
+		<!-- Social links -->
+		<div class="flex gap-4 justify-center flex-wrap">
+			<a href={SOCIAL_LINKS[0].url}
+			   class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3
+			          hover:bg-white/20 hover:border-white/40 hover:-translate-y-0.5 transition-all duration-300"
+			   target="_blank" rel="noopener noreferrer">
+				<img src={linkedinImg} alt="LinkedIn" class="w-7 h-7 rounded" />
+				<span class="text-white font-medium text-sm">LinkedIn</span>
+			</a>
+			<a href={SOCIAL_LINKS[1].url}
+			   class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3
+			          hover:bg-white/20 hover:border-white/40 hover:-translate-y-0.5 transition-all duration-300"
+			   target="_blank" rel="noopener noreferrer">
+				<img src={githubImg} alt="GitHub" class="w-7 h-7 rounded-full" style="filter: invert(1)" />
+				<span class="text-white font-medium text-sm">GitHub</span>
+			</a>
+		</div>
+
+		<!-- Copyright -->
+		<div class="border-t border-white/10 pt-6 w-full">
+			<p class="text-sm opacity-50 m-0">
+				I-Talent {currentYear} Milana Askhabova
+			</p>
 		</div>
 	</div>
 </footer>
-
-<style>
-	.footer {
-		position: relative;
-		background: var(--color-dark);
-		color: rgba(255, 255, 255, 0.8);
-		padding: var(--spacing-2xl) 0 var(--spacing-xl);
-		overflow: hidden;
-	}
-
-	.footer-gradient {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 3px;
-		background: var(--gradient-primary);
-	}
-
-	.footer-inner {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: var(--spacing-xl);
-		text-align: center;
-	}
-
-	.footer-brand {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-md);
-	}
-
-	.footer-icon {
-		font-size: 2rem;
-	}
-
-	.footer-name {
-		font-weight: 700;
-		font-size: var(--font-size-lg);
-		color: var(--color-white);
-	}
-
-	.footer-tagline {
-		font-size: var(--font-size-sm);
-		opacity: 0.6;
-		margin-top: var(--spacing-xs);
-	}
-
-	.footer-nav ul {
-		display: flex;
-		gap: var(--spacing-xl);
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.footer-nav a {
-		font-size: var(--font-size-sm);
-		color: rgba(255, 255, 255, 0.6);
-		transition: color var(--transition-base);
-		font-weight: 500;
-	}
-
-	.footer-nav a:hover {
-		color: var(--color-primary);
-	}
-
-	.footer-copy {
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-		padding-top: var(--spacing-lg);
-		width: 100%;
-		text-align: center;
-	}
-
-	.footer-copy p {
-		font-size: var(--font-size-sm);
-		opacity: 0.5;
-	}
-</style>

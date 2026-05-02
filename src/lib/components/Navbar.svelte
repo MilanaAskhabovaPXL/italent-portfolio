@@ -7,220 +7,77 @@
 
 	function handleNavClick(e, href) {
 		e.preventDefault();
-		const sectionId = href.replace('#', '');
-		smoothScroll(sectionId);
+		smoothScroll(href.replace('#', ''));
 		isMenuOpen.set(false);
-	}
-
-	function toggleMenu() {
-		isMenuOpen.update((v) => !v);
 	}
 </script>
 
-<svelte:window
-	on:scroll={() => {
-		scrolled = window.scrollY > 50;
-	}}
-/>
+<svelte:window on:scroll={() => { scrolled = window.scrollY > 50; }} />
 
-<nav class="navbar" class:scrolled>
-	<div class="navbar-inner container">
-		<a
-			href="#home"
-			class="navbar-brand"
-			on:click={(e) => handleNavClick(e, '#home')}
-			aria-label="Go to top"
-		>
-			<span class="brand-icon">🎓</span>
-			<span class="brand-text">Milana Askhabova</span>
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300
+            {scrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}">
+	<div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+		<!-- Logo -->
+		<a href="#home"
+		   class="flex items-center gap-2 font-bold text-lg transition-colors duration-300
+		          {scrolled ? 'text-gray-900' : 'text-white'}"
+		   on:click={(e) => handleNavClick(e, '#home')}
+		   aria-label="Ga naar boven">
+			<span>Milana Askhabova</span>
 		</a>
 
-		<button
-			class="hamburger"
-			class:open={$isMenuOpen}
-			on:click={toggleMenu}
-			aria-label="Toggle navigation menu"
-			aria-expanded={$isMenuOpen}
-		>
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
-
-		<ul class="nav-links" class:open={$isMenuOpen} role="list">
+		<!-- Desktop links -->
+		<ul class="hidden md:flex gap-8 items-center list-none m-0 p-0">
 			{#each NAV_LINKS as link (link.id)}
 				<li>
-					<a
-						href={link.href}
-						class="nav-link"
-						class:active={$activeSection === link.id}
-						on:click={(e) => handleNavClick(e, link.href)}
-					>
+					<a href={link.href}
+					   class="font-medium text-sm transition-all duration-300 relative
+					          {$activeSection === link.id
+					            ? 'text-[#5ba4d4]'
+					            : scrolled ? 'text-gray-700 hover:text-[#5ba4d4]' : 'text-white/85 hover:text-white'}"
+					   on:click={(e) => handleNavClick(e, link.href)}>
+						{link.label}
+						{#if $activeSection === link.id}
+							<span class="absolute -bottom-0.5 left-0 right-0 h-0.5 rounded bg-[#5ba4d4]"></span>
+						{/if}
+					</a>
+				</li>
+			{/each}
+		</ul>
+
+		<!-- Hamburger -->
+		<button class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 cursor-pointer bg-transparent border-0 p-0"
+		        on:click={() => isMenuOpen.update((v) => !v)}
+		        aria-label="Toggle navigatiemenu"
+		        aria-expanded={$isMenuOpen}>
+			<span class="block w-6 h-0.5 rounded transition-all duration-300 origin-center
+			             {scrolled ? 'bg-gray-900' : 'bg-white'}
+			             {$isMenuOpen ? 'translate-y-[7px] rotate-45' : ''}"></span>
+			<span class="block w-6 h-0.5 rounded transition-all duration-300
+			             {scrolled ? 'bg-gray-900' : 'bg-white'}
+			             {$isMenuOpen ? 'opacity-0' : ''}"></span>
+			<span class="block w-6 h-0.5 rounded transition-all duration-300 origin-center
+			             {scrolled ? 'bg-gray-900' : 'bg-white'}
+			             {$isMenuOpen ? '-translate-y-[7px] -rotate-45' : ''}"></span>
+		</button>
+	</div>
+
+	<!-- Mobile panel -->
+	{#if $isMenuOpen}
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+		<div class="md:hidden fixed inset-0 bg-black/20 z-40" on:click={() => isMenuOpen.set(false)}></div>
+		<ul class="md:hidden fixed top-0 right-0 w-72 h-full bg-white shadow-2xl flex flex-col gap-1 pt-20 px-8 z-50 list-none m-0">
+			{#each NAV_LINKS as link (link.id)}
+				<li>
+					<a href={link.href}
+					   class="font-medium text-gray-800 text-lg transition-colors block py-2 hover:text-[#5ba4d4]
+					          {$activeSection === link.id ? 'text-[#5ba4d4]' : ''}"
+					   on:click={(e) => handleNavClick(e, link.href)}>
 						{link.label}
 					</a>
 				</li>
 			{/each}
 		</ul>
-	</div>
+	{/if}
 </nav>
-
-<style>
-	.navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: var(--z-navbar);
-		padding: var(--spacing-md) 0;
-		transition: all var(--transition-base);
-		background: transparent;
-	}
-
-	.navbar.scrolled {
-		background: rgba(255, 255, 255, 0.97);
-		backdrop-filter: blur(12px);
-		box-shadow: var(--shadow-md);
-		padding: var(--spacing-sm) 0;
-	}
-
-	.navbar-inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.navbar-brand {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-sm);
-		font-weight: 700;
-		font-size: var(--font-size-lg);
-		color: var(--color-white);
-		transition: color var(--transition-base);
-	}
-
-	.navbar.scrolled .navbar-brand {
-		color: var(--color-dark);
-	}
-
-	.brand-icon {
-		font-size: var(--font-size-xl);
-	}
-
-	.nav-links {
-		display: flex;
-		gap: var(--spacing-xl);
-		align-items: center;
-	}
-
-	.nav-link {
-		font-weight: 500;
-		font-size: var(--font-size-base);
-		color: rgba(255, 255, 255, 0.85);
-		padding: var(--spacing-xs) var(--spacing-sm);
-		border-radius: var(--radius-sm);
-		transition: all var(--transition-base);
-		position: relative;
-	}
-
-	.nav-link::after {
-		content: '';
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: var(--gradient-primary);
-		transition: width var(--transition-base);
-		border-radius: var(--radius-sm);
-	}
-
-	.nav-link:hover::after,
-	.nav-link.active::after {
-		width: 100%;
-	}
-
-	.navbar.scrolled .nav-link {
-		color: var(--color-gray-800);
-	}
-
-	.nav-link:hover,
-	.nav-link.active {
-		color: var(--color-primary);
-	}
-
-	.navbar.scrolled .nav-link:hover,
-	.navbar.scrolled .nav-link.active {
-		color: var(--color-primary);
-	}
-
-	/* Hamburger button */
-	.hamburger {
-		display: none;
-		flex-direction: column;
-		gap: 5px;
-		padding: var(--spacing-xs);
-		cursor: pointer;
-	}
-
-	.hamburger span {
-		display: block;
-		width: 25px;
-		height: 2px;
-		background: var(--color-white);
-		border-radius: var(--radius-sm);
-		transition: all var(--transition-base);
-	}
-
-	.navbar.scrolled .hamburger span {
-		background: var(--color-dark);
-	}
-
-	.hamburger.open span:nth-child(1) {
-		transform: translateY(7px) rotate(45deg);
-	}
-
-	.hamburger.open span:nth-child(2) {
-		opacity: 0;
-	}
-
-	.hamburger.open span:nth-child(3) {
-		transform: translateY(-7px) rotate(-45deg);
-	}
-
-	@media (max-width: 768px) {
-		.hamburger {
-			display: flex;
-		}
-
-		.nav-links {
-			position: fixed;
-			top: 0;
-			right: -100%;
-			width: 70%;
-			max-width: 280px;
-			height: 100vh;
-			background: var(--color-white);
-			flex-direction: column;
-			align-items: flex-start;
-			padding: 5rem var(--spacing-xl) var(--spacing-xl);
-			gap: var(--spacing-md);
-			box-shadow: var(--shadow-xl);
-			transition: right var(--transition-base);
-		}
-
-		.nav-links.open {
-			right: 0;
-		}
-
-		.nav-link {
-			color: var(--color-gray-800);
-			font-size: var(--font-size-lg);
-		}
-
-		.nav-link:hover,
-		.nav-link.active {
-			color: var(--color-primary);
-		}
-	}
-</style>

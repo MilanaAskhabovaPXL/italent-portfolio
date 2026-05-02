@@ -1,199 +1,98 @@
 <script>
-	import { MILANA_PROFILE } from '$lib/utils/constants.js';
+	import { MILANA_PROFILE, SEMINARIES } from '$lib/utils/constants.js';
+
+	const imageModules = import.meta.glob('/src/images/**/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
+
+	/** @param {string} path */
+	function getImageUrl(path) {
+		return /** @type {string|undefined} */ (imageModules[`/src/images/${path}`]);
+	}
 </script>
 
-<section id="about" class="about">
-	<div class="container">
-		<h2 class="section-title">About Me</h2>
-		<p class="section-subtitle">Getting to know who I am</p>
+<section id="about" class="py-20 bg-gray-50">
+	<div class="max-w-6xl mx-auto px-6">
+		<h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3">Over mij</h2>
 
-		<div class="about-grid">
-			<div class="about-avatar-col">
-				<div class="avatar-wrapper">
-					<div class="avatar-circle">
-						<span class="avatar-initials">MA</span>
+		<div class="grid md:grid-cols-3 gap-12 mb-16 items-start">
+			<div class="flex flex-col items-center gap-4">
+				<div class="relative flex items-center justify-center mb-2">
+					<div class="w-60 h-60 rounded-full gradient-primary flex items-center justify-center shadow-blue z-10">
+						<img class="rounded-2xl w-full object-cover max-h-[420px] shadow-md" src="src/images/me/me.png" alt="MA"/>
 					</div>
-					<div class="avatar-ring" aria-hidden="true"></div>
+				
 				</div>
-				<div class="about-meta">
-					<h3 class="about-name">{MILANA_PROFILE.name}</h3>
-					<p class="about-role">{MILANA_PROFILE.title}</p>
-					<p class="about-program">{MILANA_PROFILE.program}</p>
+				<div class="text-center">
+					<h3 class="text-lg font-bold text-gray-900">{MILANA_PROFILE.name}</h3>
+					<p class="text-sm font-semibold text-[#5ba4d4]">{MILANA_PROFILE.title}</p>
+					<p class="text-sm text-gray-500">{MILANA_PROFILE.university}</p>
 				</div>
 			</div>
 
-			<div class="about-content-col">
-				<h3 class="about-heading">My iLearning Story</h3>
-				<p class="about-bio">{MILANA_PROFILE.bio}</p>
-
-				<div class="stats-grid">
-					{#each MILANA_PROFILE.stats as stat (stat.label)}
-						<div class="stat-card">
-							<span class="stat-value">{stat.value}</span>
-							<span class="stat-label">{stat.label}</span>
-						</div>
+			<div class="md:col-span-2 flex flex-col gap-6">
+				<div class="flex flex-col gap-4">
+					{#each MILANA_PROFILE.introduction as paragraph}
+						<p class="text-base text-gray-600 leading-relaxed">{paragraph}</p>
 					{/each}
 				</div>
+
+
+				<div>
+					<h4 class="text-lg font-bold text-gray-900 mb-3">Mijn sterke punten</h4>
+					<ul class="grid grid-cols-2 gap-3 list-none p-0 m-0">
+						{#each MILANA_PROFILE.strengths as strength}
+							<li class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm font-medium text-gray-800">
+								<span class="w-2 h-2 rounded-full bg-[#5ba4d4] flex-shrink-0"></span>
+								{strength}
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="mb-10 mt-10">
+			<h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Hobbies</h3>
+			<div class="grid grid-cols-3 gap-6">
+				{#each MILANA_PROFILE.hobbies as hobby}
+					<div class="flex flex-col gap-2">
+						{#if hobby.images.length === 1}
+							<div class="rounded-2xl overflow-hidden h-52 shadow-sm">
+								<img src={getImageUrl(hobby.images[0])} alt={hobby.name}
+								     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+							</div>
+						{:else}
+							<div class="flex gap-2 h-52">
+								{#each hobby.images as imgSrc}
+									<div class="flex-1 rounded-2xl overflow-hidden shadow-sm min-w-0">
+										<img src={getImageUrl(imgSrc)} alt={hobby.name}
+										     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+									</div>
+								{/each}
+							</div>
+						{/if}
+						<p class="text-center text-sm font-semibold text-gray-700">{hobby.name}</p>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<div class="bg-white rounded-2xl p-8 mb-8 shadow-sm">
+			<h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Seminaries</h3>
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+				{#each SEMINARIES as seminary}
+					<div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center hover:border-[#5ba4d4] hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+						<h4 class="text-sm font-bold text-gray-900 mb-1">{seminary.title}</h4>
+						<p class="text-xs font-semibold text-[#5ba4d4] mb-2">{seminary.date} · {seminary.duration}</p>
+						<p class="text-xs text-gray-500 leading-relaxed">{seminary.description}</p>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	.about {
-		background: var(--color-light);
-	}
-
-	.about-grid {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		gap: var(--spacing-3xl);
-		align-items: center;
-	}
-
-	/* Avatar column */
-	.about-avatar-col {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: var(--spacing-lg);
-	}
-
-	.avatar-wrapper {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: var(--spacing-md);
-	}
-
-	.avatar-circle {
-		width: 140px;
-		height: 140px;
-		border-radius: 50%;
-		background: var(--gradient-primary);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-shadow: var(--shadow-purple);
-		position: relative;
-		z-index: 1;
-	}
-
-	.avatar-initials {
-		font-size: var(--font-size-3xl);
-		font-weight: 800;
-		color: var(--color-white);
-		letter-spacing: 2px;
-	}
-
-	.avatar-ring {
-		position: absolute;
-		width: 160px;
-		height: 160px;
-		border-radius: 50%;
-		border: 3px dashed rgba(102, 126, 234, 0.3);
-		animation: spin 12s linear infinite;
-	}
-
 	@keyframes spin {
-		to {
-			transform: rotate(360deg);
-		}
-	}
-
-	.about-meta {
-		text-align: center;
-	}
-
-	.about-name {
-		font-size: var(--font-size-xl);
-		font-weight: 700;
-		color: var(--color-dark);
-		margin-bottom: var(--spacing-xs);
-	}
-
-	.about-role {
-		color: var(--color-primary);
-		font-weight: 500;
-		font-size: var(--font-size-base);
-		margin-bottom: var(--spacing-xs);
-	}
-
-	.about-program {
-		font-size: var(--font-size-sm);
-		color: var(--color-gray-600);
-	}
-
-	/* Content column */
-	.about-content-col {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-lg);
-	}
-
-	.about-heading {
-		font-size: var(--font-size-2xl);
-		font-weight: 700;
-		color: var(--color-dark);
-	}
-
-	.about-bio {
-		font-size: var(--font-size-base);
-		line-height: 1.8;
-		color: var(--color-gray-800);
-	}
-
-	/* Stats */
-	.stats-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: var(--spacing-md);
-	}
-
-	.stat-card {
-		background: var(--color-white);
-		border-radius: var(--radius-lg);
-		padding: var(--spacing-lg);
-		text-align: center;
-		box-shadow: var(--shadow-sm);
-		border: 1px solid var(--color-gray-200);
-		transition: transform var(--transition-base);
-	}
-
-	.stat-card:hover {
-		transform: translateY(-3px);
-		box-shadow: var(--shadow-purple);
-	}
-
-	.stat-value {
-		display: block;
-		font-size: var(--font-size-3xl);
-		font-weight: 800;
-		background: var(--gradient-primary);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-
-	.stat-label {
-		display: block;
-		font-size: var(--font-size-sm);
-		color: var(--color-gray-600);
-		font-weight: 500;
-		margin-top: var(--spacing-xs);
-		text-transform: uppercase;
-		letter-spacing: 0.5px;
-	}
-
-	@media (max-width: 768px) {
-		.about-grid {
-			grid-template-columns: 1fr;
-			gap: var(--spacing-xl);
-		}
-
-		.stats-grid {
-			grid-template-columns: repeat(3, 1fr);
-		}
+		to { transform: rotate(360deg); }
 	}
 </style>

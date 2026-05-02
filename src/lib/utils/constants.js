@@ -4,8 +4,8 @@ export const MILANA_PROFILE = {
 	university: 'Hogeschool PXL',
 	introduction: [
 		'Ik ben Milana, laatstejaarsstudent aan Hogeschool PXL, waar ik Toegepaste Informatica studeer met de afstudeerrichting Applicatieontwikkeling. Ik koos deze richting omdat ik graag dingen ontwikkel en het leuk vind om problemen op te lossen door te programmeren. Mijn doel is om toepassingen te maken die het leven van mensen vergemakkelijken of helpen om praktische problemen op te lossen. Naast mijn interesse in IT ben ik graag creatief bezig met pottenbakken, patisserie en het maken van kleren en ik zou me daar graag verder in verdiepen.',
-		'Een van mijn sterke punten is mijn doorzettingsvermogen: ik wil taken graag afronden en niet halverwege opgeven. Door mijn ervaring met groepsprojecten ben ik een betere teamspeler geworden en dankzij mijn studentenjobs heb ik geleerd om klantgericht te werken en goed samen te werken met anderen.',
 		'Tijdens mijn studies heb ik deelgenomen aan verschillende activiteiten: seminaries, innovatieroute, hackathons en een internationaal programma. Dit heeft me geholpen om mijn interesses beter te begrijpen en mijn vaardigheden uit te breiden.',
+		'Een van mijn sterke punten is mijn doorzettingsvermogen: ik wil taken graag afronden en niet halverwege opgeven. Door mijn ervaring met groepsprojecten ben ik een betere teamspeler geworden en dankzij mijn studentenjobs heb ik geleerd om klantgericht te werken en goed samen te werken met anderen.',
 		'Na afstuderen hoop ik toepassingen te ontwikkelen die efficiënter werken mogelijk maken of complexe processen vereenvoudigen. Ik wil mijn programmeer- en teamvaardigheden verder versterken en op termijn graag een leidinggevende rol opnemen.'
 	],
 	strengths: [

@@ -36,7 +36,7 @@
 
 				<div>
 					<h4 class="text-lg font-bold text-gray-900 mb-3">Mijn sterke punten</h4>
-					<ul class="grid grid-cols-2 gap-3 list-none p-0 m-0">
+					<ul class="grid grid-cols-3 gap-3 list-none p-0 m-0">
 						{#each MILANA_PROFILE.strengths as strength}
 							<li class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 shadow-sm font-medium text-gray-800">
 								<span class="w-2 h-2 rounded-full bg-[#5ba4d4] flex-shrink-0"></span>

@@ -11,8 +11,7 @@ export const MILANA_PROFILE = {
 	strengths: [
 		'Doorzettingsvermogen',
 		'Teamwork',
-		'Klantgericht werken',
-		'Engagement'
+		'Klantgericht werken'
 	],
 	goals: 'Na afstuderen hoop ik toepassingen te ontwikkelen die efficiënter werken mogelijk maken of complexe processen vereenvoudigen. Ik wil mijn programmeer- en teamvaardigheden verder versterken en op termijn graag een leidinggevende rol opnemen.',
 	hobbies: [

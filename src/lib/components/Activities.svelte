@@ -11,8 +11,8 @@
 <section id="activities" class="py-20 bg-white">
 	<div class="max-w-6xl mx-auto px-6">
 
-		<h2 class="text-4xl font-extrabold text-center text-gray-900 mb-3">Mijn Activiteiten</h2>
-		<p class="text-lg text-gray-500 text-center mb-16">Een overzicht van alle I-Talent activiteiten</p>
+		<h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-3">Mijn Activiteiten</h2>
+		<p class="text-base sm:text-lg text-gray-500 text-center mb-10 sm:mb-16">Een overzicht van alle I-Talent activiteiten</p>
 
 		<h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center gap-3">
 			<span class="w-1 h-6 rounded-full gradient-primary inline-block"></span>

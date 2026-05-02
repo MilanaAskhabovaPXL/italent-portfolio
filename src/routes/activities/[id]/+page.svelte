@@ -19,7 +19,7 @@
 	<title>{activity.title} | Milana Askhabova</title>
 </svelte:head>
 
-<div class="gradient-hero min-h-[280px] flex flex-col justify-end pb-10 pt-32 px-6">
+<div class="gradient-hero min-h-[280px] flex flex-col justify-end pb-10 pt-24 sm:pt-32 px-6">
 	<div class="max-w-4xl mx-auto w-full">
 		<div class="flex flex-wrap gap-2 mb-4">
 			{#each activity.tags as tag (tag)}

@@ -23,8 +23,8 @@
 			I-Talent Portfolio 2026
 		</div>
 
-		<h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-			<span class="block mt-2 text-4xl md:text-5xl"
+		<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+			<span class="block mt-2 text-3xl sm:text-4xl md:text-5xl"
 			      style="background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
 				{MILANA_PROFILE.name}
 			</span>

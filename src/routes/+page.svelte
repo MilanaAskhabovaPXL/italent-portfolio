@@ -4,15 +4,13 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import About from '$lib/components/About.svelte';
 	import Activities from '$lib/components/Activities.svelte';
-	import Highlights from '$lib/components/Highlights.svelte';
 	import Reflection from '$lib/components/Reflection.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { activeSection } from '$lib/stores/index.js';
+	import { activeSection, windowWidth } from '$lib/stores/index.js';
 	import { getActiveSection } from '$lib/services/scrollService.js';
 
-	const SECTION_IDS = ['home', 'about', 'activities', 'highlights', 'reflection'];
+	const SECTION_IDS = ['home', 'about', 'activities', 'reflection', 'contact'];
 
-	/** @type {() => void} */
 	let cleanup;
 
 	onMount(() => {
@@ -21,11 +19,20 @@
 			activeSection.set(current);
 		}
 
+		function onResize() {
+			windowWidth.set(window.innerWidth);
+		}
+
 		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onResize, { passive: true });
 		// Run once on load
 		onScroll();
+		onResize();
 
-		cleanup = () => window.removeEventListener('scroll', onScroll);
+		cleanup = () => {
+			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('resize', onResize);
+		};
 	});
 
 	onDestroy(() => {
@@ -34,8 +41,10 @@
 </script>
 
 <svelte:head>
-	<title>Milana Askhabova | iLearning Portfolio</title>
-	<meta name="description" content="iLearning Portfolio of Milana Askhabova at PXL University" />
+	<title>Milana Askhabova | I-Talent Portfolio</title>
+	<meta name="description" content="I-Talent Portfolio van Milana Askhabova aan Hogeschool PXL" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#667eea" />
 </svelte:head>
 
 <Navbar />
@@ -44,7 +53,6 @@
 	<Hero />
 	<About />
 	<Activities />
-	<Highlights />
 	<Reflection />
 </main>
 
@@ -52,7 +60,6 @@
 
 <style>
 	#main-content {
-		/* Push content below fixed navbar on skip links, if any */
 		scroll-margin-top: 80px;
 	}
 </style>

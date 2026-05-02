@@ -1,7 +1,7 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
-	import Hero from '$lib/components/Hero.svelte';
+	import HeroSection from '$lib/components/HeroSection.svelte';
 	import About from '$lib/components/About.svelte';
 	import Activities from '$lib/components/Activities.svelte';
 	import Reflection from '$lib/components/Reflection.svelte';
@@ -50,7 +50,7 @@
 <Navbar />
 
 <main id="main-content">
-	<Hero />
+	<HeroSection />
 	<About />
 	<Activities />
 	<Reflection />

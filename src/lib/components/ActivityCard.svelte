@@ -7,7 +7,7 @@
 
 	<div class="p-6 border-b border-gray-100">
 		<h3 class="text-lg font-bold text-gray-900 leading-snug mb-1">
-			<a href="/activities/{activity.id}"
+			<a href="/italent-portfolio/activities/{activity.id}"
 			   class="hover:text-[#5ba4d4] transition-colors duration-200 inline-flex items-center gap-1.5">
 				{activity.title}
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"

@@ -1,11 +1,9 @@
 <script>
 	import { MILANA_PROFILE, SEMINARIES } from '$lib/utils/constants.js';
 
-	const imageModules = import.meta.glob('/src/images/**/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-
 	/** @param {string} path */
 	function getImageUrl(path) {
-		return /** @type {string|undefined} */ (imageModules[`/src/images/${path}`]);
+		return `/italent-portfolio/images/${path}`;
 	}
 </script>
 
@@ -17,7 +15,7 @@
 			<div class="flex flex-col items-center gap-4">
 				<div class="relative flex items-center justify-center mb-2">
 					<div class="w-60 h-60 rounded-full gradient-primary flex items-center justify-center shadow-blue z-10">
-						<img class="rounded-2xl w-full object-cover max-h-[420px] shadow-md" src="src/images/me/me.png" alt="MA"/>
+						<img class="rounded-2xl w-full object-cover max-h-[420px] shadow-md" src="/italent-portfolio/images/me/me.png" alt="MA"/>
 					</div>
 				
 				</div>

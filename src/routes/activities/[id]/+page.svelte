@@ -86,7 +86,7 @@
 
 
 <!-- Back button -->
-	<a href="/#activities"
+	<a href="/italent-portfolio/#activities"
 	   class="inline-flex items-center gap-2 gradient-primary text-white px-6 py-3 rounded-full font-semibold
 	          hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">

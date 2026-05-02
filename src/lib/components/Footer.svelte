@@ -1,8 +1,9 @@
 <script>
 	import { smoothScroll } from '$lib/services/scrollService.js';
 	import { NAV_LINKS, SOCIAL_LINKS } from '$lib/utils/constants.js';
-	import linkedinImg from '../../images/contacts/linkedin.png';
-	import githubImg from '../../images/contacts/github.png';
+
+	const linkedinImg = '/italent-portfolio/images/contacts/linkedin.png';
+	const githubImg = '/italent-portfolio/images/contacts/github.png';
 
 	const currentYear = new Date().getFullYear();
 

@@ -2,11 +2,9 @@
 	import { ACTIVITIES, PERSONAL_DEVELOPMENT, EXTRA_ACTIVITIES } from '$lib/utils/constants.js';
 	import ActivityCard from '$lib/components/ActivityCard.svelte';
 
-	const imageModules = import.meta.glob('/src/images/**/*.{png,jpg,jpeg,webp}', { eager: true, query: '?url', import: 'default' });
-
 	/** @param {string} path */
 	function getImageUrl(path) {
-		return /** @type {string|undefined} */ (imageModules[`/src/images/${path}`]);
+		return `/italent-portfolio/images/${path}`;
 	}
 </script>
 

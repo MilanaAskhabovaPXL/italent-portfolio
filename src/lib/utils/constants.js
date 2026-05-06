@@ -209,7 +209,7 @@ export const PERSONAL_DEVELOPMENT = [
 		date: '8 oktober 2025',
 		duration: '3 uur',
 		location: 'Zelfstudie',
-		description: 'Zelfstandige analyse over groepsdynamica. Verdieping in de Piramide van Lencioni: kwetsbaar vertrouwen als basis voor productieve conflicten en gezamenlijke resultaten.'
+		description: 'Zelfstandige analyse over groepsdynamica. Verdieping in de Piramide van Lencioni: vertrouwen als basis voor productieve conflicten en gezamenlijke resultaten.'
 	}
 ];
 

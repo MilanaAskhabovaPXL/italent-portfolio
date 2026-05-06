@@ -67,7 +67,7 @@ export const ACTIVITIES = [
 		duration: '30 uur',
 		doelstelling: 'In een multidisciplinair en internationaal team een AI-gestuurd app-concept ontwikkelen dat studenten en ouderen verbindt voor wederzijds leren.',
 		eigenDoelstelling: 'Ervaring opdoen in teamwerk en leren samenwerken met collega\'s uit andere landen en andere richtingen dan IT.',
-		teamSamenstelling: 'Ons team bestond uit zes personen. Ik als enige IT-student voor de mockups, studenten van marketing en management.',
+		teamSamenstelling: 'Ons team bestond uit zes personen. Als enige IT-student werkte ik samen met vijf studenten van de opleidingen Marketing en Management.',
 		description: 'In een multidisciplinair en internationaal team een AI-gestuurd app-concept ontwikkeld dat jongeren en ouderen verbindt voor wederzijds leren.',
 		tags: ['Internationaal', 'AI', 'Teamwork', 'Innovation'],
 		details: [

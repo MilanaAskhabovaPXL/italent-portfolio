@@ -68,7 +68,7 @@
         return ACTIVITIES.find(a => a.id === id);
     }
 
-    function getPosition(angle, distance = 180) {
+    function getPosition(angle, distance = 140) { // Afstand iets verkleind voor betere mobiele schaalbaarheid
         const rad = (angle * Math.PI) / 180;
         return {
             x: Math.cos(rad) * distance,
@@ -126,6 +126,18 @@
 
     .x-factor-container {
         perspective: 1000px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: scale(0.8); /* Standaard schaal voor desktop */
+        transform-origin: center center;
+        transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .x-factor-container {
+            transform: scale(0.65); /* Verkleint het wiel op tablets/mobiel zodat het past */
+        }
     }
 
     .x-logo {
@@ -303,16 +315,16 @@
         <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
     </div>
 
-    <div class="relative z-10">
+    <div class="relative z-10 px-4 sm:px-6">
         <div class="text-center pt-12 pb-8">
-            <h1 class="text-6xl font-black mb-2 glow-text">Mijn X-Factor</h1>
-            <p class="text-xl text-gray-300">PXL Digital</p>
+            <h1 class="text-4xl sm:text-6xl font-black mb-2 glow-text">Mijn X-Factor</h1>
+            <p class="text-lg sm:text-xl text-gray-300">PXL Digital</p>
         </div>
 
-        <div class="flex justify-center gap-4 mb-12">
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
             <button
                 on:click={toggleSpin}
-                class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-bold transition-all hover:scale-105 shadow-lg text-white"
+                class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-bold transition-all hover:scale-105 shadow-lg text-white"
             >
                 {isSpinning ? '⏹ Stop draaien' : '▶ Start draaien'}
             </button>
@@ -326,14 +338,14 @@
                         spinInterval = null;
                     }
                 }}
-                class="px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-all hover:scale-105 text-white"
+                class="w-full sm:w-auto px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-bold transition-all hover:scale-105 text-white"
             >
                 Alles resetten
             </button>
         </div>
 
-        <div class="flex gap-8 max-w-7xl mx-auto px-6 items-start">
-            <div class="flex-shrink-0 w-[500px] h-[500px]">
+        <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto px-2 sm:px-6 items-center lg:items-start">
+            <div class="flex-shrink-0 w-[320px] sm:w-[400px] lg:w-[500px] h-[320px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
                 <div class="x-factor-container w-full h-full relative">
                     <div class="x-logo">X</div>
 
@@ -344,7 +356,7 @@
                         style="{isSpinning && isFlipped ? 'animation-play-state: paused;' : ''}"
                     >
                         {#each X_FACTOR_CORE as core (core.id)}
-                            {@const pos = getPosition(core.angle, 180)}
+                            {@const pos = getPosition(core.angle, 120)}
                             <div
                                 class="core-item"
                                 style="left: calc(50% + {pos.x}px); top: calc(50% + {pos.y}px);"
@@ -373,39 +385,39 @@
                 </div>
             </div>
 
-            <div class="flex-1 min-h-[500px] w-full max-w-2xl">
+            <div class="w-full max-w-2xl">
             {#if selectedCoreData}
-                <div class="flip-container fade-in">
+                <div class="flip-container fade-in px-2 sm:px-0">
                     <div class="flip-inner" class:is-flipped={isFlipped}>
                         
-                        <div class="flip-front bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-8 border border-slate-600 shadow-2xl h-full flex flex-col justify-between">
+                        <div class="flip-front bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 sm:p-8 border border-slate-600 shadow-2xl h-full flex flex-col justify-between">
                             <div>
-                                <div class="flex items-start gap-6 mb-8">
-                                    <div class="w-20 h-20 rounded-full bg-gradient-to-br {selectedCoreData.color} flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br {selectedCoreData.color} flex items-center justify-center flex-shrink-0 shadow-lg mx-auto sm:mx-0">
                                         {#if selectedCoreData.icon === 'heart'}
-                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+                                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
                                         {:else if selectedCoreData.icon === 'lightbulb'}
-                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" /></svg>
+                                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" /></svg>
                                         {:else if selectedCoreData.icon === 'users'}
-                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
+                                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
                                         {:else if selectedCoreData.icon === 'globe'}
-                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.34.16-2h4.68c.09.66.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+                                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.34.16-2h4.68c.09.66.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
                                         {/if}
                                     </div>
-                                    <div>
-                                        <h2 class="text-4xl lg:text-5xl font-bold mb-4">{selectedCoreData.label}</h2>
-                                        <p class="text-gray-200 text-lg leading-relaxed">{selectedCoreData.description}</p>
+                                    <div class="text-center sm:text-left">
+                                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4">{selectedCoreData.label}</h2>
+                                        <p class="text-gray-200 text-sm sm:text-base lg:text-lg leading-relaxed">{selectedCoreData.description}</p>
                                     </div>
                                 </div>
 
-                                <div class="mt-6 pt-6 border-t border-slate-600">
-                                    <h3 class="text-2xl font-bold mb-4 text-white">Gekoppelde Activiteiten:</h3>
-                                    <div class="flex flex-wrap gap-3">
+                                <div class="mt-4 pt-4 sm:mt-6 sm:pt-6 border-t border-slate-600">
+                                    <h3 class="text-base sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">Gekoppelde Activiteiten:</h3>
+                                    <div class="flex flex-wrap gap-2 sm:gap-3">
                                         {#each selectedCoreData.activities as activityId (activityId)}
                                             {@const activity = getActivityById(activityId)}
                                             <a
                                                 href="/italent-portfolio/activities/{activity.id}"
-                                                class="activity-tag bg-gradient-to-r {selectedCoreData.color} shadow-md hover:shadow-lg"
+                                                class="activity-tag bg-gradient-to-r {selectedCoreData.color} shadow-md hover:shadow-lg text-xs sm:text-sm"
                                             >
                                                 {activity.title}
                                             </a>
@@ -414,40 +426,40 @@
                                 </div>
                             </div>
 
-                            <div class="mt-8 pt-6 border-t border-slate-600 flex flex-wrap gap-4">
+                            <div class="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-slate-600 flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <button 
                                     on:click={() => isFlipped = true} 
-                                    class="flex-1 px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded-lg font-bold transition-all shadow-md text-white border border-slate-500"
+                                    class="w-full sm:flex-1 px-4 py-3 bg-slate-600 hover:bg-slate-500 rounded-lg font-bold transition-all shadow-md text-white border border-slate-500 text-sm sm:text-base"
                                 >
                                     Hoe heb ik dit bereikt? ⤾
                                 </button>
                                 <a
                                     href="/italent-portfolio/activities-overview"
-                                    class="flex-1 text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-bold transition-all shadow-lg text-white"
+                                    class="w-full sm:flex-1 text-center px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-bold transition-all shadow-lg text-white text-sm sm:text-base"
                                 >
                                     Bekijk overzicht
                                 </a>
                             </div>
                         </div>
 
-                        <div class="flip-back bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-8 border border-slate-600 shadow-2xl h-full flex flex-col">
-                            <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 rounded-full bg-gradient-to-br {selectedCoreData.color} flex items-center justify-center flex-shrink-0 shadow-lg">
-                                    <span class="text-2xl font-bold text-white">X</span>
+                        <div class="flip-back bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 sm:p-8 border border-slate-600 shadow-2xl h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4 sm:mb-6">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br {selectedCoreData.color} flex items-center justify-center flex-shrink-0 shadow-lg">
+                                    <span class="text-xl sm:text-2xl font-bold text-white">X</span>
                                 </div>
-                                <h2 class="text-3xl font-black text-white">{selectedCoreData.label}</h2>
+                                <h2 class="text-2xl sm:text-3xl font-black text-white">{selectedCoreData.label}</h2>
                             </div>
 
-                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-600 mb-8 flex-grow">
-                                <h3 class="text-2xl font-bold text-white mb-4">Hoe heb ik dit bereikt?</h3>
-                                <p class="text-lg text-gray-200 leading-relaxed font-medium">
+                            <div class="bg-slate-900/50 rounded-xl p-4 sm:p-6 border border-slate-600 mb-6 sm:mb-8 flex-grow">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4">Hoe heb ik dit bereikt?</h3>
+                                <p class="text-sm sm:text-lg text-gray-200 leading-relaxed font-medium">
                                     {selectedCoreData.howAchieved}
                                 </p>
                             </div>
 
                             <button
                                 on:click={() => isFlipped = false}
-                                class="w-full px-6 py-4 bg-slate-600 hover:bg-slate-500 rounded-lg font-bold transition-all shadow-md text-white border border-slate-500 mt-auto text-lg flex justify-center items-center gap-2"
+                                class="w-full px-6 py-3 sm:py-4 bg-slate-600 hover:bg-slate-500 rounded-lg font-bold transition-all shadow-md text-white border border-slate-500 mt-auto text-base sm:text-lg flex justify-center items-center gap-2"
                             >
                                 ⤾ Terug draaien
                             </button>
@@ -456,26 +468,26 @@
                     </div>
                 </div>
             {:else}
-                <div class="text-center fade-in h-full flex items-center justify-center">
-                    <div class="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-12 backdrop-blur">
-                        <p class="text-2xl text-gray-100 font-semibold mb-3">Kies een dimensie</p>
-                        <p class="text-gray-300 text-lg">Klik op een bol in het diagram links</p>
-                        <p class="text-gray-400 mt-2 text-sm italic">...of laat het wiel draaien via de knop bovenaan</p>
+                <div class="text-center fade-in h-full flex items-center justify-center px-4 sm:px-0">
+                    <div class="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-6 sm:p-12 backdrop-blur">
+                        <p class="text-xl sm:text-2xl text-gray-100 font-semibold mb-2 sm:mb-3">Kies een dimensie</p>
+                        <p class="text-gray-300 text-sm sm:text-lg">Klik op een bol in het diagram links</p>
+                        <p class="text-gray-400 mt-2 text-xs sm:text-sm italic">...of laat het wiel draaien via de knop bovenaan</p>
                     </div>
                 </div>
             {/if}
             </div>
         </div>
 
-        <div class="flex flex-col items-center gap-6 mt-16 pb-12">
+        <div class="flex flex-col items-center gap-6 mt-12 sm:mt-16 pb-12">
             <a 
-                href="/italent-portfolio/#reflection" 
-                class="px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 rounded-xl font-black transition-all hover:scale-105 shadow-xl text-white text-lg tracking-wide"
+                href="/italent-portfolio/reflection" 
+                class="w-full max-w-xs text-center px-6 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 rounded-xl font-black transition-all hover:scale-105 shadow-xl text-white text-base sm:text-lg tracking-wide"
             >
                 Naar Mijn Eindreflectie ➔
             </a>
 
-            <a href="/#activities" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors text-lg">
+            <a href="/italent-portfolio/#activities" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors text-base sm:text-lg">
                 ← Terug naar portfolio
             </a>
         </div>

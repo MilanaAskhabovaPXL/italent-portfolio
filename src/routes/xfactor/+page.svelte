@@ -481,7 +481,7 @@
 
         <div class="flex flex-col items-center gap-6 mt-12 sm:mt-16 pb-12">
             <a 
-                href="/italent-portfolio/reflection" 
+                href="/italent-portfolio/#reflection" 
                 class="w-full max-w-xs text-center px-6 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 rounded-xl font-black transition-all hover:scale-105 shadow-xl text-white text-base sm:text-lg tracking-wide"
             >
                 Naar Mijn Eindreflectie ➔

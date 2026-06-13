@@ -213,43 +213,7 @@ export const PERSONAL_DEVELOPMENT = [
 	}
 ];
 
-export const EXTRA_ACTIVITIES = [
-	{
-		title: 'Cyber Security Challenge Belgium (CSC)',
-		date: '14-15 maart 2025',
-		duration: '32 uur',
-		location: 'Online',
-		tags: ['CTF', 'Cybersecurity', 'Python'],
-		description: 'Deelname in team "Onions" aan een Capture The Flag (CTF) competitie. Flags gevonden in audiobestanden, PNG-metadata en via zelfgeschreven Python scripts.',
-		reflectie: [
-			'Deze hackathon was echt anders dan Hack the Future. Hier ging het niet om code schrijven maar om problemen oplossen met tools en scripts die je niet kent. Dit leerde me veel over mijn aanpak en hoe ik onder druk kan denken.',
-			'Mijn sterke punt was dat ik niet snel opgaf. Als een challenge niet werkte, probeerde ik een ander approach. Ik leerde snel van mijn teamgenoten. Ze hielpen me begrijpen hoe je bepaalde tools gebruikt en hoe je naar beveiligingsproblemen denkt. Dit leerde me dat je in IT veel kan leren van andere mensen als je bereid bent vragen te stellen. In het begin snapte ik niet hoe Python scripts werkten, maar door te experimenteren en vragen te stellen aan mijn team, snapte ik het uiteindelijk wel.',
-			'Mijn zwakke punt was dat ik niet veel cybersecurity kennis had. Ik moest veel googlen en veel dingen werden me uitgelegd. Ik voelde me soms verloren tussen al die tools en technieken. Maar dit is ook waarom ik deze hackathon deed, om precies dit te leren. Dit gaf me inzicht dat je niet alles op school leert. Je moet actief zoeken naar kennis en je moet durven deelnemen aan activiteiten waar je niet alles van weet.',
-			'De CSC was mijn eerste echte Capture The Flag competitie en het gaf me inzicht dat er veel verschillende soorten programmeerwerk bestaan. Niet alles is applicatieontwikkeling. Er is security, data analysis, forensics, en veel meer. Dit kan een richting zijn die me interesseert voor later. Ik realiseerde me dat cybersecurity echt boeiend is. Het gaat over het vinden van zwakke plekken, over creatief denken, over het begrijpen van systemen op een dieper niveau.',
-			'Wat me het meest is bijgebleven is het moment dat ik zelf een flag vond met mijn Python script. Ik had het script geschreven, het werkte, en ik vond iets wat anderen niet hadden gevonden. Dat gaf me echt vertrouwen. Dit toont dat je dingen kan leren en kan toepassen zelfs als je niet veel voorkennnis hebt.',
-			'Het teamwork in CSC was anders dan in andere hackathons. We zaten samen online, delen onze schermen, brainstormden samen. Dit leerde me dat goed communiceren essentieel is in een team. Als iemand vastzat, hij deelde het probleem en we hielpen elkaar. Dit is wat samenwerking betekent: elkaar helpen en samen verder gaan.',
-			'Dit hackathon toont ook mijn engagement en ondernemerschap. Ik deed dit niet omdat het verplicht was. Ik schreef me in omdat ik benieuwd was en omdat ik wilde leren. Dit is mijn X-Factor: ik zoek actief naar kansen, ik probeer dingen die ik niet ken, en ik geef niet op als het moeilijk wordt.',
-			'Ik heb deze activiteit geselecteerd omdat het me toont dat ik uit mijn comfortzone kan gaan. Ik kende cybersecurity niet echt maar ik deed het toch. Dit leerde me ook dat failuren niet erg zijn. We wonnen niet, maar we leerden. Dit is wat telt.',
-			'Voor de toekomst wil ik meer over cybersecurity leren. Misschien volg ik later een cursus of een specialisatie. Dit hackathon gaf me een eerste smaak en ik wil meer. Dit toont ook dat I-Talent me helpt om mijn interesses beter te ontdekken en uit te bouwen.',
-			'Tot slot: deze hackathon herinnert me eraan dat je als developer nooit kan stoppen met leren. De IT-wereld verandert snel en je moet openstaan voor nieuwe dingen. CSC leerde me dit op een praktische manier.'
-		],
-		images: [
-			{ src: 'hackathon/csc2025/pixel-csc.png', alt: 'CSC 2025 deelname' },
-			{ src: 'hackathon/csc2025/scoreboard.png', alt: 'CSC scoreboard' }
-		]
-	},
-	{
-		title: 'Info Support: CodeBash',
-		date: '25 oktober 2025',
-		duration: '7 uur',
-		location: 'Info Support, Mechelen',
-		tags: ['Algoritmen', 'Competitie', 'Teamwork'],
-		description: 'Algoritmische programmeerwedstrijd in teamverband. Complexe logische problemen oplossen en code optimaliseren onder tijdsdruk.',
-		images: [
-			{ src: 'hackathon/codebash/pizza-break.png', alt: 'CodeBash pauze' }
-		]
-	}
-];
+export const EXTRA_ACTIVITIES = [];
 
 export const SEMINARIES = [
 	{

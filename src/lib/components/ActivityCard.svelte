@@ -24,7 +24,7 @@
 	<div class="p-6 flex flex-col gap-4 flex-1">
 		<p class="text-sm text-gray-600 leading-relaxed">{activity.description}</p>
 
-<div class="flex flex-wrap gap-2">
+		<div class="flex flex-wrap gap-2">
 			{#each activity.tags as tag (tag)}
 				<span class="bg-gray-100 text-gray-700 border border-gray-200 rounded-full px-3 py-1 text-xs font-semibold
 				             hover:bg-[#5ba4d4]/10 hover:border-[#5ba4d4] hover:text-[#5ba4d4] transition-all duration-150 cursor-default">

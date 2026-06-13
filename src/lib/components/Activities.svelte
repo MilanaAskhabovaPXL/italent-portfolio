@@ -14,9 +14,15 @@
 		<h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-3">Mijn Activiteiten</h2>
 		<p class="text-base sm:text-lg text-gray-500 text-center mb-10 sm:mb-16">Een overzicht van alle I-Talent activiteiten</p>
 
-		<h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center gap-3">
-			<span class="w-1 h-6 rounded-full gradient-primary inline-block"></span>
-			Geselecteerde activiteiten
+		<h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center justify-between gap-3">
+			<div class="flex items-center gap-3">
+				<span class="w-1 h-6 rounded-full gradient-primary inline-block"></span>
+				Geselecteerde activiteiten
+			</div>
+			<a href="/italent-portfolio/timeline"
+			   class="text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-200 whitespace-nowrap">
+				Mijn I-Talent
+			</a>
 		</h3>
 		<p class="text-sm text-gray-500 mb-8 ml-4">Vier activiteiten uitgewerkt met volledig verslag en reflectie</p>
 		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -47,6 +53,43 @@
 				<span class="w-1 h-6 rounded-full gradient-primary inline-block"></span>
 				Andere deelnames
 			</h3>
+			<p class="text-sm text-gray-500 mb-8 ml-4">Extra hackathons uit eigen initiatief</p>
+			<div class="grid sm:grid-cols-2 gap-6 mb-16">
+				<div class="bg-gradient-to-br from-red-50 to-rose-50 rounded-2xl border-2 border-red-200 overflow-hidden hover:border-red-400 hover:shadow-md transition-all duration-300">
+					<div class="p-6">
+						<div class="flex items-start justify-between mb-2">
+							<h4 class="text-base font-bold text-gray-900 leading-snug">Cyber Security Challenge Belgium</h4>
+							<span class="text-xs font-bold bg-red-200 text-red-800 px-3 py-1 rounded-full">Hackathon</span>
+						</div>
+						<p class="text-xs font-semibold text-red-600 mb-3">14-15 maart 2025 - Online - 32 uur</p>
+						<p class="text-sm text-gray-600 leading-relaxed mb-4">Deelname in team "Onions" aan Capture The Flag competitie. Flags gevonden via Python scripts, steganografie en metadata-analyse.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-red-100 text-red-700 border border-red-200 rounded-full px-3 py-1 text-xs font-semibold">CTF</span>
+							<span class="bg-red-100 text-red-700 border border-red-200 rounded-full px-3 py-1 text-xs font-semibold">Cybersecurity</span>
+							<span class="bg-red-100 text-red-700 border border-red-200 rounded-full px-3 py-1 text-xs font-semibold">Python</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-200 overflow-hidden hover:border-amber-400 hover:shadow-md transition-all duration-300">
+					<div class="p-6">
+						<div class="flex items-start justify-between mb-2">
+							<h4 class="text-base font-bold text-gray-900 leading-snug">Info Support: CodeBash</h4>
+							<span class="text-xs font-bold bg-amber-200 text-amber-800 px-3 py-1 rounded-full">Hackathon</span>
+						</div>
+						<p class="text-xs font-semibold text-amber-600 mb-3">25 oktober 2025 - Mechelen - 7 uur</p>
+						<p class="text-sm text-gray-600 leading-relaxed mb-4">Algoritmische programmeerwedstrijd in teamverband. Complexe logische problemen oplossen en code optimaliseren onder tijdsdruk.</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="bg-amber-100 text-amber-700 border border-amber-200 rounded-full px-3 py-1 text-xs font-semibold">Algoritmen</span>
+							<span class="bg-amber-100 text-amber-700 border border-amber-200 rounded-full px-3 py-1 text-xs font-semibold">Competitie</span>
+							<span class="bg-amber-100 text-amber-700 border border-amber-200 rounded-full px-3 py-1 text-xs font-semibold">Teamwork</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
 	
 			<div class="grid sm:grid-cols-2 gap-6">
 				{#each EXTRA_ACTIVITIES as item}

@@ -47,7 +47,7 @@
       color: '#4a42a8',
       tags: ['Architectuur', 'DDD', '.NET', 'Event Storming'],
       xfactors: ['Innovatie'],
-      description: '3 dagen bij experts von Cyber Tree Consulting, Erqigen en Info Support. Event Storming, value objects, aggregates en onion architecture geïmplementeerd in .NET.',
+      description: '3 dagen bij experts van Cyber Tree Consulting, Erqigen en Info Support. Event Storming, value objects, aggregates en onion architecture geïmplementeerd in .NET.',
       highlight: 'De post-its oefening — complexe processen visueel ontleden samen met het hele team.',
       icon: 'ti-topology-star',
       domain: 'Innovatie',

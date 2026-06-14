@@ -20,7 +20,7 @@
             color: 'from-amber-500 to-orange-600',
             activities: ['ddd', 'hackathon'],
             description: 'Onderzoekend handelen en het zoeken naar innovatieve oplossingen. Ik creëerde DDD-concepten en bouwde Flutter-apps onder tijdsdruk.',
-            howAchieved: 'Ik volgde de DDD-route en leerde over Domain Driven Design-concepten. In hackathons bouwde ik Flutter-apps onder stressvolle omstandigheden. Ik zocht creatieve oplossingen, dacht out-of-the-box en experimenteerde met nieuwe technologieën.',
+            howAchieved: 'Binnen het BIP-programma "Innovate with AI" heb ik ondernemend gehandeld door het concept van een app die studenten en ouderen verbindt mede vorm te geven en de UX/mockups te ontwerpen. Daarnaast toonde ik innovatie door DDD-concepten toe te passen en onder stressvolle omstandigheden Flutter-apps te bouwen tijdens hackathons',
             angle: 0
         },
         {
@@ -40,7 +40,7 @@
             color: 'from-purple-500 to-indigo-600',
             activities: ['bip', 'csc'],
             description: 'Perspectief verruimen in internationale context. Ik werkte met teams uit Duitsland, Kroatië en online met studenten wereldwijd.',
-            howAchieved: 'Bij BIP communiceerde ik in het Engels met teamleden uit buitenlandse universiteiten. Bij CSC werkte ik met een online team van studenten uit verschillende landen. Dit gaf mij international werkervaring en flexibiliteit om in internationale omgevingen te functioneren.',
+            howAchieved: 'Bij BIP communiceerde ik in het Engels met teamleden uit buitenlandse universiteiten. Dit gaf mij international werkervaring en flexibiliteit om in internationale omgevingen te functioneren.',
             angle: 180
         }
     ];
@@ -410,20 +410,7 @@
                                     </div>
                                 </div>
 
-                                <div class="mt-4 pt-4 sm:mt-6 sm:pt-6 border-t border-slate-600">
-                                    <h3 class="text-base sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">Gekoppelde Activiteiten:</h3>
-                                    <div class="flex flex-wrap gap-2 sm:gap-3">
-                                        {#each selectedCoreData.activities as activityId (activityId)}
-                                            {@const activity = getActivityById(activityId)}
-                                            <a
-                                                href="/italent-portfolio/activities/{activity.id}"
-                                                class="activity-tag bg-gradient-to-r {selectedCoreData.color} shadow-md hover:shadow-lg text-xs sm:text-sm"
-                                            >
-                                                {activity.title}
-                                            </a>
-                                        {/each}
-                                    </div>
-                                </div>
+                            
                             </div>
 
                             <div class="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-slate-600 flex flex-col sm:flex-row gap-3 sm:gap-4">

@@ -29,7 +29,7 @@
       duration: '30 uur',
       color: '#0F6E56',
       tags: ['Internationaal', 'AI', 'Teamwork', 'UX'],
-      xfactors: ['Internationalisering', 'Multi-disciplinariteit', '(Em)passie'],
+      xfactors: ['Internationalisering', 'Multi-disciplinariteit'],
       description: 'Een week in een multidisciplinair internationaal team (België, Duitsland, Kroatië) een app "GenLink" ontwikkeld. Als enige IT-student maakte ik alle mockups.',
       highlight: 'Vrienden maken van over heel Europa en ontdekken dat teamwerk meer is dan taakuitvoering.',
       icon: 'ti-world',

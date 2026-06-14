@@ -46,7 +46,7 @@
       duration: '25 uur',
       color: '#4a42a8',
       tags: ['Architectuur', 'DDD', '.NET', 'Event Storming'],
-      xfactors: ['Innovatie', 'Persoonlijke ontwikkeling'],
+      xfactors: ['Innovatie'],
       description: '3 dagen bij experts von Cyber Tree Consulting, Erqigen en Info Support. Event Storming, value objects, aggregates en onion architecture geïmplementeerd in .NET.',
       highlight: 'De post-its oefening — complexe processen visueel ontleden samen met het hele team.',
       icon: 'ti-topology-star',
@@ -63,7 +63,7 @@
       duration: '25 uur',
       color: '#b86a10',
       tags: ['Flutter', 'AI', 'Gemini LLM', 'Mobile'],
-      xfactors: ['Innovatie', 'Persoonlijke ontwikkeling', '(Em)passie'],
+      xfactors: ['Innovatie', '(Em)passie'],
       description: '"Agentic Ocean Explorer" — Flutter-app die vragen over oceaandata beantwoordt via Gemini LLM. Bugs gefixt tot 10 minuten voor de presentatie.',
       highlight: 'Kalm blijven onder druk en het project toch succesvol presenteren — doorzettingsvermogen bewezen.',
       icon: 'ti-rocket',
@@ -162,7 +162,7 @@
               <div class="card-reveal">
                 {#if act.image}
                   <div class="card-img-wrap mb-6">
-                    <img src={base + act.image} alt={act.title} class="w-full h-96 object-cover rounded-2xl shadow-md border border-slate-100" />
+                    <img src={base + act.image} alt={act.title} class="w-full h-96 object-cover rounded-2xl shadow-lg border border-slate-100" />
                   </div>
                 {/if}
 
@@ -197,8 +197,8 @@
       <i class="ti ti-arrow-left"></i>
       Terug naar overzicht
     </a>
-    <a href="/italent-portfolio/reflection" class="btn-nav btn-next">
-      Naar Eindreflectie
+    <a href="/italent-portfolio/xfactor" class="btn-nav btn-next">
+      Mijn X-Factor
       <i class="ti ti-arrow-right"></i>
     </a>
   </div>
@@ -344,11 +344,12 @@
     border: 1px solid #e2e8f0;
     border-top: 5px solid transparent;
     border-radius: 24px;
-    padding: 36px;
+    padding: 36px; /* Royzamere padding */
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
   }
 
+  /* Bij hoveren/actief: schaal soepel uit, geef diepte en randkleur */
   .tl-card:hover, .card-active {
     transform: scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
@@ -373,7 +374,7 @@
 
   /* ─── Title ─── */
   .card-title {
-    font-size: 28px;
+    font-size: 28px; /* Duidelijk groter voor presentaties */
     font-weight: 800;
     color: #111827;
     line-height: 1.4;
@@ -429,7 +430,7 @@
   }
 
   .card-desc {
-    font-size: 18px;
+    font-size: 18px; /* Grotere, comfortabel leesbare tekst */
     color: #374151;
     line-height: 1.85;
     margin-bottom: 24px;
